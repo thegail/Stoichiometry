@@ -24,34 +24,46 @@ struct MeasuredEquation {
 		self.verbose = verbose
 	}
 	
-	mutating func applyKnowns(reactants knownReactants: Array<(index: Int, grams: Double)>, products knownProducts: Array<(index: Int, grams: Double)>) throws {
-		for (index, grams) in knownReactants {
-			guard index < self.reactants.count else {
-				throw Error.outOfRange
-			}
-			self.reactants[index].moles = grams / self.reactants[index].compound.molarMass
+	mutating func applyKnown(index: Int, reactantMoles: Double) throws {
+		guard index < self.reactants.count else {
+			throw Error.outOfRange
 		}
-		for (index, grams) in knownProducts {
-			guard index < self.products.count else {
-				throw Error.outOfRange
-			}
-			self.products[index].moles = grams / self.products[index].compound.molarMass
-		}
+		self.reactants[index].moles = reactantMoles
 	}
 	
-	mutating func applyKnowns(reactants knownReactants: Array<(index: Int, moles: Double)>, products knownProducts: Array<(index: Int, moles: Double)>) throws {
-		for (index, moles) in knownReactants {
-			guard index < self.reactants.count else {
-				throw Error.outOfRange
-			}
-			self.reactants[index].moles = moles
+	mutating func applyKnown(index: Int, reactantGrams: Double) throws {
+		guard index < self.reactants.count else {
+			throw Error.outOfRange
 		}
-		for (index, moles) in knownProducts {
-			guard index < self.products.count else {
-				throw Error.outOfRange
-			}
-			self.products[index].moles = moles
+		self.reactants[index].moles = reactantGrams / self.reactants[index].compound.molarMass
+	}
+	
+	mutating func applyKnown(index: Int, reactantMilligrams: Double) throws {
+		guard index < self.reactants.count else {
+			throw Error.outOfRange
 		}
+		self.reactants[index].moles = reactantMilligrams / (self.reactants[index].compound.molarMass * 1000)
+	}
+	
+	mutating func applyKnown(index: Int, productMoles: Double) throws {
+		guard index < self.products.count else {
+			throw Error.outOfRange
+		}
+		self.products[index].moles = productMoles
+	}
+	
+	mutating func applyKnown(index: Int, productGrams: Double) throws {
+		guard index < self.products.count else {
+			throw Error.outOfRange
+		}
+		self.products[index].moles = productGrams / self.products[index].compound.molarMass
+	}
+	
+	mutating func applyKnown(index: Int, productMilligrams: Double) throws {
+		guard index < self.reactants.count else {
+			throw Error.outOfRange
+		}
+		self.products[index].moles = productMilligrams / (self.products[index].compound.molarMass * 1000)
 	}
 	
 	mutating func fill() throws {

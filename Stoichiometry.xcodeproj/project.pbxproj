@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F5E98672745AA850075340B /* Mass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5E98662745AA850075340B /* Mass.swift */; };
 		9FA7492A2742F17F0031C548 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA749292742F17F0031C548 /* main.swift */; };
 		9FA749312742F1970031C548 /* EquationParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA749302742F1970031C548 /* EquationParser.swift */; };
 		9FA74933274316830031C548 /* String+CharacterSets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA74932274316830031C548 /* String+CharacterSets.swift */; };
@@ -33,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		9F5E98652744ADF90075340B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		9F5E98662745AA850075340B /* Mass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mass.swift; sourceTree = "<group>"; };
 		9FA749262742F17F0031C548 /* Stoichiometry */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Stoichiometry; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FA749292742F17F0031C548 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		9FA749302742F1970031C548 /* EquationParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquationParser.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				9FA7493D274357AE0031C548 /* Parsing */,
 				9FA749292742F17F0031C548 /* main.swift */,
 				9FA7494927440DCB0031C548 /* React.swift */,
+				9F5E98662745AA850075340B /* Mass.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 				9FA74943274359240031C548 /* Compound.swift in Sources */,
 				9FA7494827436FFD0031C548 /* MeasuredEquation.swift in Sources */,
 				9FA74941274358A00031C548 /* Equation.swift in Sources */,
+				9F5E98672745AA850075340B /* Mass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

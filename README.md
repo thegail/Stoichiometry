@@ -1,6 +1,6 @@
 #  Stoichiometry
 
-Stoichiometry is a powerful command line tool for preforming stoichiometry
+Stoichiometry is a powerful command line tool for performing stoichiometry
 chemicals and chemical equations. Its subcommands are listed below.
 
 ## React
@@ -15,7 +15,7 @@ Na2(CO3) + CaCl2 -> Ca(CO3) + 2NaCl
 Where `Na2(CO3)` and `CaCl2` are reactants, and `Ca(CO3)` and `NaCl` are
 products.
 
-You must also provide at least one target argument. When targetting an
+You must also provide at least one target argument. When targeting an
 amount of either a reactant or product, you use the `-r` and `-p` options
 respectively, adding either a ? (unknown amount) or a number representing
 the targeted number of grams for each reactant/product. This example

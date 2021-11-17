@@ -9,7 +9,7 @@ import Foundation
 import ArgumentParser
 
 struct StoichiometryCommand: ParsableCommand {
-	static var configuration = CommandConfiguration(commandName: "stoic", subcommands: [ReactCommand.self])
+	static var configuration = CommandConfiguration(commandName: "stoic", subcommands: [ReactCommand.self, MassCommand.self])
 }
 
 StoichiometryCommand.main()
