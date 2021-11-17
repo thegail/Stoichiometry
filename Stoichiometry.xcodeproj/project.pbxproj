@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		9FA7492A2742F17F0031C548 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA749292742F17F0031C548 /* main.swift */; };
+		9FA749312742F1970031C548 /* EquationParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA749302742F1970031C548 /* EquationParser.swift */; };
+		9FA74933274316830031C548 /* String+CharacterSets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA74932274316830031C548 /* String+CharacterSets.swift */; };
+		9FA7493527432ABF0031C548 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA7493427432ABF0031C548 /* Element.swift */; };
+		9FA7493827433FC80031C548 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 9FA7493727433FC80031C548 /* ArgumentParser */; };
+		9FA7493A274344E10031C548 /* Element+elements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA74939274344E10031C548 /* Element+elements.swift */; };
+		9FA74941274358A00031C548 /* Equation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA74940274358A00031C548 /* Equation.swift */; };
+		9FA74943274359240031C548 /* Compound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA74942274359240031C548 /* Compound.swift */; };
+		9FA7494827436FFD0031C548 /* MeasuredEquation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA7494727436FFD0031C548 /* MeasuredEquation.swift */; };
+		9FA7494A27440DCB0031C548 /* React.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA7494927440DCB0031C548 /* React.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +32,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9F5E98652744ADF90075340B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		9FA749262742F17F0031C548 /* Stoichiometry */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Stoichiometry; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FA749292742F17F0031C548 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		9FA749302742F1970031C548 /* EquationParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquationParser.swift; sourceTree = "<group>"; };
+		9FA74932274316830031C548 /* String+CharacterSets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+CharacterSets.swift"; sourceTree = "<group>"; };
+		9FA7493427432ABF0031C548 /* Element.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Element.swift; sourceTree = "<group>"; };
+		9FA74939274344E10031C548 /* Element+elements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Element+elements.swift"; sourceTree = "<group>"; };
+		9FA74940274358A00031C548 /* Equation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Equation.swift; sourceTree = "<group>"; };
+		9FA74942274359240031C548 /* Compound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Compound.swift; sourceTree = "<group>"; };
+		9FA7494727436FFD0031C548 /* MeasuredEquation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasuredEquation.swift; sourceTree = "<group>"; };
+		9FA7494927440DCB0031C548 /* React.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = React.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FA7493827433FC80031C548 /* ArgumentParser in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,7 +60,8 @@
 		9FA7491D2742F17F0031C548 = {
 			isa = PBXGroup;
 			children = (
-				9FA749282742F17F0031C548 /* Stoichiometry */,
+				9F5E98652744ADF90075340B /* README.md */,
+				9FA749282742F17F0031C548 /* Sources */,
 				9FA749272742F17F0031C548 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,12 +74,44 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9FA749282742F17F0031C548 /* Stoichiometry */ = {
+		9FA749282742F17F0031C548 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				9FA7493F2743589A0031C548 /* Equations */,
+				9FA7493E274357B30031C548 /* Elements */,
+				9FA7493D274357AE0031C548 /* Parsing */,
 				9FA749292742F17F0031C548 /* main.swift */,
+				9FA7494927440DCB0031C548 /* React.swift */,
 			);
-			path = Stoichiometry;
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		9FA7493D274357AE0031C548 /* Parsing */ = {
+			isa = PBXGroup;
+			children = (
+				9FA749302742F1970031C548 /* EquationParser.swift */,
+				9FA74932274316830031C548 /* String+CharacterSets.swift */,
+			);
+			path = Parsing;
+			sourceTree = "<group>";
+		};
+		9FA7493E274357B30031C548 /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				9FA7493427432ABF0031C548 /* Element.swift */,
+				9FA74939274344E10031C548 /* Element+elements.swift */,
+			);
+			path = Elements;
+			sourceTree = "<group>";
+		};
+		9FA7493F2743589A0031C548 /* Equations */ = {
+			isa = PBXGroup;
+			children = (
+				9FA74940274358A00031C548 /* Equation.swift */,
+				9FA7494727436FFD0031C548 /* MeasuredEquation.swift */,
+				9FA74942274359240031C548 /* Compound.swift */,
+			);
+			path = Equations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -78,6 +130,9 @@
 			dependencies = (
 			);
 			name = Stoichiometry;
+			packageProductDependencies = (
+				9FA7493727433FC80031C548 /* ArgumentParser */,
+			);
 			productName = Stoichiometry;
 			productReference = 9FA749262742F17F0031C548 /* Stoichiometry */;
 			productType = "com.apple.product-type.tool";
@@ -106,6 +161,9 @@
 				Base,
 			);
 			mainGroup = 9FA7491D2742F17F0031C548;
+			packageReferences = (
+				9FA7493627433FC80031C548 /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
+			);
 			productRefGroup = 9FA749272742F17F0031C548 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -120,7 +178,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FA74933274316830031C548 /* String+CharacterSets.swift in Sources */,
+				9FA749312742F1970031C548 /* EquationParser.swift in Sources */,
+				9FA7493A274344E10031C548 /* Element+elements.swift in Sources */,
+				9FA7494A27440DCB0031C548 /* React.swift in Sources */,
+				9FA7493527432ABF0031C548 /* Element.swift in Sources */,
 				9FA7492A2742F17F0031C548 /* main.swift in Sources */,
+				9FA74943274359240031C548 /* Compound.swift in Sources */,
+				9FA7494827436FFD0031C548 /* MeasuredEquation.swift in Sources */,
+				9FA74941274358A00031C548 /* Equation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +348,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9FA7493627433FC80031C548 /* XCRemoteSwiftPackageReference "swift-argument-parser" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-argument-parser.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9FA7493727433FC80031C548 /* ArgumentParser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9FA7493627433FC80031C548 /* XCRemoteSwiftPackageReference "swift-argument-parser" */;
+			productName = ArgumentParser;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9FA7491E2742F17F0031C548 /* Project object */;
 }
