@@ -16,13 +16,14 @@ Where `Na2(CO3)` and `CaCl2` are reactants, and `Ca(CO3)` and `NaCl` are
 products.
 
 You must also provide at least one target argument. When targeting an
-amount of either a reactant or product, you use the `-r` and `-p` options
-respectively, adding either a ? (unknown amount) or a number representing
-the targeted number of grams for each reactant/product. This example
-`react` command calculates the required amounts of sodium carbonate and
-calcium chloride to produce 2 grams of calcium carbonate:
+amount of either a reactant or product, you use the `--reactants` (`-r`)
+and `--products` (`-p`) options respectively, adding either a ?
+(no target) or a number representing the targeted amount of each
+reactant/product annotated with a unit (grams, milligrams, moles supported).
+This example `react` command calculates the required amounts of sodium
+carbonate and calcium chloride to produce 2 grams of calcium carbonate:
 ```
-$ stoic react "Na2(CO3) + CaCl2 -> Ca(CO3) + 2NaCl" -p 2 ?
+$ stoic react "Na2(CO3) + CaCl2 -> Ca(CO3) + 2NaCl" --products 2g ?
 Reaction: Na2(CO3) + CaCl2 -> Ca(CO3) + 2NaCl
 Reactants:
 Na2(CO3) required: 2.117920887633085g
@@ -32,12 +33,12 @@ Ca(CO3) produced: 2.0g
 NaCl produced: 2.335572836349394g
 ```
 
-The `-v` flag enables verbose output, which prints the detailed molar mass
+The `--verbose` (`-v`) flag enables verbose output, which prints the detailed molar mass
 calculations for each compound and the limiting reaction calculation. Here
 is the output of the previous example with the verbose flag enabled:
  
 ```
-$ stoic react "Na2(CO3) + CaCl2 -> Ca(CO3) + 2NaCl" -p 2 ? -v
+$ stoic react "Na2(CO3) + CaCl2 -> Ca(CO3) + 2NaCl" --products 2 ? --verbose
 Reaction: Na2(CO3) + CaCl2 -> Ca(CO3) + 2NaCl
 Molar mass calculations:
 Molar mass of Na2(CO3) = 2x22.989769282 + (12.011 + 3x15.999) = 105.987538564 g/mol
@@ -59,5 +60,28 @@ Ca(CO3) produced: 2.0g
 NaCl produced: 2.335572836349394g
 ```
 
-The `-o` option changes the output units, if you want to view the reactant/product
-amounts in another format. Supported formats are grams, milligrams, and moles.
+The `--output-format` option (`-o`) changes the output units,
+if you want to view the reactant/product amounts in another format.
+Supported formats are grams, milligrams, and moles.
+
+## Mass
+
+The Mass subcommand calculates the molar mass of a compound, and provides
+options to automatically convert grams to moles or vice versa. It takes
+one argument, `compound`, which is the chemical formula for the compound
+you want the mass of. The `--grams` option (`-g`) uses the molar mass of
+the compound to convert grams of that compound to moles, and the `--moles`
+option (`-m`) does the reverse. This example `mass` command calculates the
+number of moles in 23.5 grams of copper (II) chloride:
+```
+$ stoic mass "CuCl2" --grams 23.5
+23.5 grams of CuCl2 = 0.1747909760253722 mol
+```
+
+The `--verbose` option (`-v`) includes the detailed molar mass calculation
+in the output. The above command with the `--verbose` option outputs:
+```
+$ stoic mass "CuCl2" --grams 23.5 --verbose
+Molar mass of CuCl2 = 63.5463 + 2x35.45 = 134.4463 g/mol
+23.5 grams of CuCl2 = 0.1747909760253722 mol
+```
