@@ -38,13 +38,6 @@ struct MeasuredEquation {
 		self.reactants[index].moles = reactantGrams / self.reactants[index].compound.molarMass
 	}
 	
-	mutating func applyKnown(index: Int, reactantMilligrams: Double) throws {
-		guard index < self.reactants.count else {
-			throw Error.outOfRange
-		}
-		self.reactants[index].moles = reactantMilligrams / (self.reactants[index].compound.molarMass * 1000)
-	}
-	
 	mutating func applyKnown(index: Int, productMoles: Double) throws {
 		guard index < self.products.count else {
 			throw Error.outOfRange
@@ -57,13 +50,6 @@ struct MeasuredEquation {
 			throw Error.outOfRange
 		}
 		self.products[index].moles = productGrams / self.products[index].compound.molarMass
-	}
-	
-	mutating func applyKnown(index: Int, productMilligrams: Double) throws {
-		guard index < self.reactants.count else {
-			throw Error.outOfRange
-		}
-		self.products[index].moles = productMilligrams / (self.products[index].compound.molarMass * 1000)
 	}
 	
 	mutating func fill() throws {

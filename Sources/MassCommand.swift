@@ -1,5 +1,5 @@
 //
-//  Mass.swift
+//  MassCommand.swift
 //  Stoichiometry
 //
 //  Created by Teddy Gaillard on 11/17/21.
@@ -11,10 +11,12 @@ import ArgumentParser
 struct MassCommand: ParsableCommand {
 	static var configuration = CommandConfiguration(commandName: "mass")
 	
-	@Argument var compound: String
-	@Option(name: .shortAndLong) var moles: Double?
-	@Option(name: .shortAndLong) var grams: Double?
-	@Flag(name: .shortAndLong) var verbose = false
+	@Argument(help: "The compound to calculate the mass of") var compound: String
+	@Option(name: .shortAndLong, help: "A number of moles of compound to convert to grams")
+	var moles: Double?
+	@Option(name: .shortAndLong, help: "A number of grams of compound to convert to moles")
+	var grams: Double?
+	@Flag(name: .shortAndLong, help: "Verbose mode") var verbose = false
 	
 	mutating func run() throws {
 		let compound: Compound

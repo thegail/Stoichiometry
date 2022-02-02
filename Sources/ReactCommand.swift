@@ -38,7 +38,11 @@ struct ReactCommand: ParsableCommand {
 					case .grams:
 						try measuredEquation.applyKnown(index: knownReactant.offset, reactantGrams: knownReactant.element.number!)
 					case .milligrams:
-						try measuredEquation.applyKnown(index: knownReactant.offset, reactantMilligrams: knownReactant.element.number!)
+						try measuredEquation.applyKnown(index: knownReactant.offset, reactantGrams: knownReactant.element.number! / 1000)
+					case .liters:
+						try measuredEquation.applyKnown(index: knownReactant.offset, reactantMoles: knownReactant.element.number! / 22.4)
+					case .milliliters:
+						try measuredEquation.applyKnown(index: knownReactant.offset, reactantMoles: knownReactant.element.number! / 22400)
 					}
 				}
 				for knownProduct in knownProducts {
@@ -48,7 +52,11 @@ struct ReactCommand: ParsableCommand {
 					case .grams:
 						try measuredEquation.applyKnown(index: knownProduct.offset, productGrams: knownProduct.element.number!)
 					case .milligrams:
-						try measuredEquation.applyKnown(index: knownProduct.offset, productMilligrams: knownProduct.element.number!)
+						try measuredEquation.applyKnown(index: knownProduct.offset, productGrams: knownProduct.element.number! / 1000)
+					case .liters:
+						try measuredEquation.applyKnown(index: knownProduct.offset, productMoles: knownProduct.element.number! / 22.4)
+					case .milliliters:
+						try measuredEquation.applyKnown(index: knownProduct.offset, productMoles: knownProduct.element.number! / 22400)
 					}
 				}
 			} catch let error {
@@ -112,6 +120,12 @@ struct ReactCommand: ParsableCommand {
 			} else if argument.hasSuffix("mol"), let number = Double(argument.prefix(argument.count - 3)) {
 				self.number = number
 				self.unit = .moles
+			} else if argument.hasSuffix("l"), let number = Double(argument.prefix(argument.count - 1)) {
+				self.number = number
+				self.unit = .liters
+			} else if argument.hasSuffix("ml"), let number = Double(argument.prefix(argument.count - 2)) {
+				self.number = number
+				self.unit = .milliliters
 			} else {
 				return nil
 			}
@@ -119,7 +133,7 @@ struct ReactCommand: ParsableCommand {
 	}
 	
 	enum FormatUnit: ExpressibleByArgument {
-		case moles, grams, milligrams
+		case moles, grams, milligrams, liters, milliliters
 		
 		init?(argument: String) {
 			switch argument {
@@ -129,6 +143,10 @@ struct ReactCommand: ParsableCommand {
 				self = .grams
 			case "milligrams", "mg", "milligram":
 				self = .milligrams
+			case "liters", "l", "liter":
+				self = .liters
+			case "milliliters", "ml", "milliliter":
+				self = .milliliters
 			default:
 				return nil
 			}
@@ -142,6 +160,10 @@ struct ReactCommand: ParsableCommand {
 				return "\(grams)g"
 			case .milligrams:
 				return "\(grams * 1000)mg"
+			case .liters:
+				return "\(moles * 22.4)l"
+			case .milliliters:
+				return "\(moles * 22400)ml"
 			}
 		}
 	}
