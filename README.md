@@ -1,4 +1,4 @@
-#  Stoichiometry
+# Stoichiometry
 
 Stoichiometry is a powerful command line tool for performing stoichiometry
 chemicals and chemical equations. Its subcommands are listed below.

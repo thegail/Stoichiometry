@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9F5E98672745AA850075340B /* Mass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5E98662745AA850075340B /* Mass.swift */; };
+		9F5E98672745AA850075340B /* MassCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5E98662745AA850075340B /* MassCommand.swift */; };
 		9FA7492A2742F17F0031C548 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA749292742F17F0031C548 /* main.swift */; };
 		9FA749312742F1970031C548 /* EquationParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA749302742F1970031C548 /* EquationParser.swift */; };
 		9FA74933274316830031C548 /* String+CharacterSets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA74932274316830031C548 /* String+CharacterSets.swift */; };
@@ -17,7 +17,8 @@
 		9FA74941274358A00031C548 /* Equation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA74940274358A00031C548 /* Equation.swift */; };
 		9FA74943274359240031C548 /* Compound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA74942274359240031C548 /* Compound.swift */; };
 		9FA7494827436FFD0031C548 /* MeasuredEquation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA7494727436FFD0031C548 /* MeasuredEquation.swift */; };
-		9FA7494A27440DCB0031C548 /* React.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA7494927440DCB0031C548 /* React.swift */; };
+		9FA7494A27440DCB0031C548 /* ReactCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA7494927440DCB0031C548 /* ReactCommand.swift */; };
+		9FB149BF2747183500682F9A /* ConcentrationCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB149BE2747183500682F9A /* ConcentrationCommand.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,7 +35,7 @@
 
 /* Begin PBXFileReference section */
 		9F5E98652744ADF90075340B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		9F5E98662745AA850075340B /* Mass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mass.swift; sourceTree = "<group>"; };
+		9F5E98662745AA850075340B /* MassCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MassCommand.swift; sourceTree = "<group>"; };
 		9FA749262742F17F0031C548 /* Stoichiometry */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Stoichiometry; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FA749292742F17F0031C548 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		9FA749302742F1970031C548 /* EquationParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquationParser.swift; sourceTree = "<group>"; };
@@ -44,7 +45,8 @@
 		9FA74940274358A00031C548 /* Equation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Equation.swift; sourceTree = "<group>"; };
 		9FA74942274359240031C548 /* Compound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Compound.swift; sourceTree = "<group>"; };
 		9FA7494727436FFD0031C548 /* MeasuredEquation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasuredEquation.swift; sourceTree = "<group>"; };
-		9FA7494927440DCB0031C548 /* React.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = React.swift; sourceTree = "<group>"; };
+		9FA7494927440DCB0031C548 /* ReactCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactCommand.swift; sourceTree = "<group>"; };
+		9FB149BE2747183500682F9A /* ConcentrationCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcentrationCommand.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,8 +85,9 @@
 				9FA7493E274357B30031C548 /* Elements */,
 				9FA7493D274357AE0031C548 /* Parsing */,
 				9FA749292742F17F0031C548 /* main.swift */,
-				9FA7494927440DCB0031C548 /* React.swift */,
-				9F5E98662745AA850075340B /* Mass.swift */,
+				9FA7494927440DCB0031C548 /* ReactCommand.swift */,
+				9F5E98662745AA850075340B /* MassCommand.swift */,
+				9FB149BE2747183500682F9A /* ConcentrationCommand.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -148,7 +151,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1310;
-				LastUpgradeCheck = 1310;
+				LastUpgradeCheck = 1320;
 				TargetAttributes = {
 					9FA749252742F17F0031C548 = {
 						CreatedOnToolsVersion = 13.1;
@@ -181,16 +184,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FB149BF2747183500682F9A /* ConcentrationCommand.swift in Sources */,
 				9FA74933274316830031C548 /* String+CharacterSets.swift in Sources */,
 				9FA749312742F1970031C548 /* EquationParser.swift in Sources */,
 				9FA7493A274344E10031C548 /* Element+elements.swift in Sources */,
-				9FA7494A27440DCB0031C548 /* React.swift in Sources */,
+				9FA7494A27440DCB0031C548 /* ReactCommand.swift in Sources */,
 				9FA7493527432ABF0031C548 /* Element.swift in Sources */,
 				9FA7492A2742F17F0031C548 /* main.swift in Sources */,
 				9FA74943274359240031C548 /* Compound.swift in Sources */,
 				9FA7494827436FFD0031C548 /* MeasuredEquation.swift in Sources */,
 				9FA74941274358A00031C548 /* Equation.swift in Sources */,
-				9F5E98672745AA850075340B /* Mass.swift in Sources */,
+				9F5E98672745AA850075340B /* MassCommand.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +319,7 @@
 		9FA7492E2742F17F0031C548 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -324,6 +329,7 @@
 		9FA7492F2742F17F0031C548 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

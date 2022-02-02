@@ -72,7 +72,7 @@ struct MeasuredEquation {
 	
 	func filled() throws -> Self {
 		if self.verbose {
-			print("Limiting factor calculation:")
+			print("\u{1B}[1mLimiting factor calculation:\u{1B}[0m")
 		}
 		
 		var smallestReactionsPossible: Double? = nil

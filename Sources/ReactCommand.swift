@@ -1,5 +1,5 @@
 //
-//  React.swift
+//  ReactCommand.swift
 //  Stoichiometry
 //
 //  Created by Teddy Gaillard on 11/16/21.
@@ -57,7 +57,7 @@ struct ReactCommand: ParsableCommand {
 			
 			print("Reaction: \(parsedEquation)")
 			if !parsedEquation.isBalanced {
-				print("Warning: equation is not balanced")
+				print("\u{1B}[33mWarning: equation is not balanced\u{1B}[0m")
 			}
 			
 			if self.verbose {
@@ -66,7 +66,7 @@ struct ReactCommand: ParsableCommand {
 	
 			try measuredEquation.fill()
 			
-			print("Reactants:")
+			print("\u{1B}[1mReactants:\u{1B}[0m")
 			for reactant in measuredEquation.reactants {
 				guard let moles = reactant.moles else {
 					fatalError("unreachable")
@@ -75,7 +75,7 @@ struct ReactCommand: ParsableCommand {
 				print("\(reactant.compound) required: \(self.outputFormat.format(moles: moles, grams: massInGrams))")
 			}
 			
-			print("Products:")
+			print("\u{1B}[1mProducts:\u{1B}[0m")
 			for product in measuredEquation.products {
 				guard let moles = product.moles else {
 					fatalError("unreachable")
@@ -89,7 +89,7 @@ struct ReactCommand: ParsableCommand {
 	}
 	
 	private static func printMolarMasses(equation: Equation) {
-		print("Molar mass calculations:")
+		print("\u{1B}[1mMolar mass calculations:\u{1B}[0m")
 		for unit in equation.reactants + equation.products {
 			print("Molar mass of \(unit.compound) = \(unit.compound.molarMassCalculation) = \(unit.compound.molarMass) g/mol")
 		}
