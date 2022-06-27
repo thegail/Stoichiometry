@@ -1,7 +1,9 @@
 # Stoichiometry
 
 Stoichiometry is a powerful command line tool for performing stoichiometry
-chemicals and chemical equations. Its subcommands are listed below.
+chemicals and chemical equations. Its subcommands are listed below. @MDNich
+has built a GUI frontend for this tool, along with a collection of other
+helpful science utilities at [MDNich/SciTool](https://github.com/MDNich/SciTool)
 
 ## React
 
